@@ -16,332 +16,26 @@
 
 // Version 22-Mar-2021
 
-pragma solidity 0.6.12;
+pragma solidity 0.8.4;
 pragma experimental ABIEncoderV2;
 
 // solhint-disable avoid-low-level-calls
 // solhint-disable not-rely-on-time
 // solhint-disable no-inline-assembly
 
-// File @boringcrypto/boring-solidity/contracts/interfaces/IERC20.sol@v1.2.0
-// License-Identifier: MIT
+import "./interfaces/IERC20.sol";
+import "./interfaces/IFlashBorrower.sol";
+import "./interfaces/IBatchFlashBorrower.sol";
+import "./interfaces/IWETH.sol";
+import "./interfaces/IStrategy.sol";
 
-interface IERC20 {
-    function totalSupply() external view returns (uint256);
+import "./libraries/BoringERC20.sol";
+import "./libraries/BoringMath.sol";
+import "./libraries/BoringMath32.sol";
+import "./libraries/BoringMath64.sol";
+import "./libraries/BoringMath128.sol";
+import "./libraries/RebaseLibrary.sol";
 
-    function balanceOf(address account) external view returns (uint256);
-
-    function allowance(address owner, address spender) external view returns (uint256);
-
-    function approve(address spender, uint256 amount) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    event Approval(address indexed owner, address indexed spender, uint256 value);
-
-    /// @notice EIP 2612
-    function permit(
-        address owner,
-        address spender,
-        uint256 value,
-        uint256 deadline,
-        uint8 v,
-        bytes32 r,
-        bytes32 s
-    ) external;
-}
-
-// File contracts/interfaces/IFlashLoan.sol
-// License-Identifier: MIT
-
-interface IFlashBorrower {
-    /// @notice The flashloan callback. `amount` + `fee` needs to repayed to msg.sender before this call returns.
-    /// @param sender The address of the invoker of this flashloan.
-    /// @param token The address of the token that is loaned.
-    /// @param amount of the `token` that is loaned.
-    /// @param fee The fee that needs to be paid on top for this loan. Needs to be the same as `token`.
-    /// @param data Additional data that was passed to the flashloan function.
-    function onFlashLoan(
-        address sender,
-        IERC20 token,
-        uint256 amount,
-        uint256 fee,
-        bytes calldata data
-    ) external;
-}
-
-interface IBatchFlashBorrower {
-    /// @notice The callback for batched flashloans. Every amount + fee needs to repayed to msg.sender before this call returns.
-    /// @param sender The address of the invoker of this flashloan.
-    /// @param tokens Array of addresses for ERC-20 tokens that is loaned.
-    /// @param amounts A one-to-one map to `tokens` that is loaned.
-    /// @param fees A one-to-one map to `tokens` that needs to be paid on top for each loan. Needs to be the same token.
-    /// @param data Additional data that was passed to the flashloan function.
-    function onBatchFlashLoan(
-        address sender,
-        IERC20[] calldata tokens,
-        uint256[] calldata amounts,
-        uint256[] calldata fees,
-        bytes calldata data
-    ) external;
-}
-
-// File contracts/interfaces/IWETH.sol
-// License-Identifier: MIT
-
-interface IWETH {
-    function deposit() external payable;
-
-    function withdraw(uint256) external;
-}
-
-// File contracts/interfaces/IStrategy.sol
-// License-Identifier: MIT
-
-interface IStrategy {
-    /// @notice Send the assets to the Strategy and call skim to invest them.
-    /// @param amount The amount of tokens to invest.
-    function skim(uint256 amount) external;
-
-    /// @notice Harvest any profits made converted to the asset and pass them to the caller.
-    /// @param balance The amount of tokens the caller thinks it has invested.
-    /// @param sender The address of the initiator of this transaction. Can be used for reimbursements, etc.
-    /// @return amountAdded The delta (+profit or -loss) that occured in contrast to `balance`.
-    function harvest(uint256 balance, address sender) external returns (int256 amountAdded);
-
-    /// @notice Withdraw assets. The returned amount can differ from the requested amount due to rounding.
-    /// @dev The `actualAmount` should be very close to the amount.
-    /// The difference should NOT be used to report a loss. That's what harvest is for.
-    /// @param amount The requested amount the caller wants to withdraw.
-    /// @return actualAmount The real amount that is withdrawn.
-    function withdraw(uint256 amount) external returns (uint256 actualAmount);
-
-    /// @notice Withdraw all assets in the safest way possible. This shouldn't fail.
-    /// @param balance The amount of tokens the caller thinks it has invested.
-    /// @return amountAdded The delta (+profit or -loss) that occured in contrast to `balance`.
-    function exit(uint256 balance) external returns (int256 amountAdded);
-}
-
-// File @boringcrypto/boring-solidity/contracts/libraries/BoringERC20.sol@v1.2.0
-// License-Identifier: MIT
-
-library BoringERC20 {
-    bytes4 private constant SIG_SYMBOL = 0x95d89b41; // symbol()
-    bytes4 private constant SIG_NAME = 0x06fdde03; // name()
-    bytes4 private constant SIG_DECIMALS = 0x313ce567; // decimals()
-    bytes4 private constant SIG_TRANSFER = 0xa9059cbb; // transfer(address,uint256)
-    bytes4 private constant SIG_TRANSFER_FROM = 0x23b872dd; // transferFrom(address,address,uint256)
-
-    /// @notice Provides a safe ERC20.transfer version for different ERC-20 implementations.
-    /// Reverts on a failed transfer.
-    /// @param token The address of the ERC-20 token.
-    /// @param to Transfer tokens to.
-    /// @param amount The token amount.
-    function safeTransfer(
-        IERC20 token,
-        address to,
-        uint256 amount
-    ) internal {
-        (bool success, bytes memory data) = address(token).call(abi.encodeWithSelector(SIG_TRANSFER, to, amount));
-        require(success && (data.length == 0 || abi.decode(data, (bool))), "BoringERC20: Transfer failed");
-    }
-
-    /// @notice Provides a safe ERC20.transferFrom version for different ERC-20 implementations.
-    /// Reverts on a failed transfer.
-    /// @param token The address of the ERC-20 token.
-    /// @param from Transfer tokens from.
-    /// @param to Transfer tokens to.
-    /// @param amount The token amount.
-    function safeTransferFrom(
-        IERC20 token,
-        address from,
-        address to,
-        uint256 amount
-    ) internal {
-        (bool success, bytes memory data) = address(token).call(abi.encodeWithSelector(SIG_TRANSFER_FROM, from, to, amount));
-        require(success && (data.length == 0 || abi.decode(data, (bool))), "BoringERC20: TransferFrom failed");
-    }
-}
-
-// File @boringcrypto/boring-solidity/contracts/libraries/BoringMath.sol@v1.2.0
-// License-Identifier: MIT
-
-/// @notice A library for performing overflow-/underflow-safe math,
-/// updated with awesomeness from of DappHub (https://github.com/dapphub/ds-math).
-library BoringMath {
-    function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require((c = a + b) >= b, "BoringMath: Add Overflow");
-    }
-
-    function sub(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require((c = a - b) <= a, "BoringMath: Underflow");
-    }
-
-    function mul(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b == 0 || (c = a * b) / b == a, "BoringMath: Mul Overflow");
-    }
-
-    function to128(uint256 a) internal pure returns (uint128 c) {
-        require(a <= uint128(-1), "BoringMath: uint128 Overflow");
-        c = uint128(a);
-    }
-
-    function to64(uint256 a) internal pure returns (uint64 c) {
-        require(a <= uint64(-1), "BoringMath: uint64 Overflow");
-        c = uint64(a);
-    }
-
-    function to32(uint256 a) internal pure returns (uint32 c) {
-        require(a <= uint32(-1), "BoringMath: uint32 Overflow");
-        c = uint32(a);
-    }
-}
-
-/// @notice A library for performing overflow-/underflow-safe addition and subtraction on uint128.
-library BoringMath128 {
-    function add(uint128 a, uint128 b) internal pure returns (uint128 c) {
-        require((c = a + b) >= b, "BoringMath: Add Overflow");
-    }
-
-    function sub(uint128 a, uint128 b) internal pure returns (uint128 c) {
-        require((c = a - b) <= a, "BoringMath: Underflow");
-    }
-}
-
-/// @notice A library for performing overflow-/underflow-safe addition and subtraction on uint64.
-library BoringMath64 {
-    function add(uint64 a, uint64 b) internal pure returns (uint64 c) {
-        require((c = a + b) >= b, "BoringMath: Add Overflow");
-    }
-
-    function sub(uint64 a, uint64 b) internal pure returns (uint64 c) {
-        require((c = a - b) <= a, "BoringMath: Underflow");
-    }
-}
-
-/// @notice A library for performing overflow-/underflow-safe addition and subtraction on uint32.
-library BoringMath32 {
-    function add(uint32 a, uint32 b) internal pure returns (uint32 c) {
-        require((c = a + b) >= b, "BoringMath: Add Overflow");
-    }
-
-    function sub(uint32 a, uint32 b) internal pure returns (uint32 c) {
-        require((c = a - b) <= a, "BoringMath: Underflow");
-    }
-}
-
-// File @boringcrypto/boring-solidity/contracts/libraries/BoringRebase.sol@v1.2.0
-// License-Identifier: MIT
-
-struct Rebase {
-    uint128 elastic;
-    uint128 base;
-}
-
-/// @notice A rebasing library using overflow-/underflow-safe math.
-library RebaseLibrary {
-    using BoringMath for uint256;
-    using BoringMath128 for uint128;
-
-    /// @notice Calculates the base value in relationship to `elastic` and `total`.
-    function toBase(
-        Rebase memory total,
-        uint256 elastic,
-        bool roundUp
-    ) internal pure returns (uint256 base) {
-        if (total.elastic == 0) {
-            base = elastic;
-        } else {
-            base = elastic.mul(total.base) / total.elastic;
-            if (roundUp && base.mul(total.elastic) / total.base < elastic) {
-                base = base.add(1);
-            }
-        }
-    }
-
-    /// @notice Calculates the elastic value in relationship to `base` and `total`.
-    function toElastic(
-        Rebase memory total,
-        uint256 base,
-        bool roundUp
-    ) internal pure returns (uint256 elastic) {
-        if (total.base == 0) {
-            elastic = base;
-        } else {
-            elastic = base.mul(total.elastic) / total.base;
-            if (roundUp && elastic.mul(total.base) / total.elastic < base) {
-                elastic = elastic.add(1);
-            }
-        }
-    }
-
-    /// @notice Add `elastic` to `total` and doubles `total.base`.
-    /// @return (Rebase) The new total.
-    /// @return base in relationship to `elastic`.
-    function add(
-        Rebase memory total,
-        uint256 elastic,
-        bool roundUp
-    ) internal pure returns (Rebase memory, uint256 base) {
-        base = toBase(total, elastic, roundUp);
-        total.elastic = total.elastic.add(elastic.to128());
-        total.base = total.base.add(base.to128());
-        return (total, base);
-    }
-
-    /// @notice Sub `base` from `total` and update `total.elastic`.
-    /// @return (Rebase) The new total.
-    /// @return elastic in relationship to `base`.
-    function sub(
-        Rebase memory total,
-        uint256 base,
-        bool roundUp
-    ) internal pure returns (Rebase memory, uint256 elastic) {
-        elastic = toElastic(total, base, roundUp);
-        total.elastic = total.elastic.sub(elastic.to128());
-        total.base = total.base.sub(base.to128());
-        return (total, elastic);
-    }
-
-    /// @notice Add `elastic` and `base` to `total`.
-    function add(
-        Rebase memory total,
-        uint256 elastic,
-        uint256 base
-    ) internal pure returns (Rebase memory) {
-        total.elastic = total.elastic.add(elastic.to128());
-        total.base = total.base.add(base.to128());
-        return total;
-    }
-
-    /// @notice Subtract `elastic` and `base` to `total`.
-    function sub(
-        Rebase memory total,
-        uint256 elastic,
-        uint256 base
-    ) internal pure returns (Rebase memory) {
-        total.elastic = total.elastic.sub(elastic.to128());
-        total.base = total.base.sub(base.to128());
-        return total;
-    }
-
-    /// @notice Add `elastic` to `total` and update storage.
-    /// @return newElastic Returns updated `elastic`.
-    function addElastic(Rebase storage total, uint256 elastic) internal returns (uint256 newElastic) {
-        newElastic = total.elastic = total.elastic.add(elastic.to128());
-    }
-
-    /// @notice Subtract `elastic` from `total` and update storage.
-    /// @return newElastic Returns updated `elastic`.
-    function subElastic(Rebase storage total, uint256 elastic) internal returns (uint256 newElastic) {
-        newElastic = total.elastic = total.elastic.sub(elastic.to128());
-    }
-}
-
-// File @boringcrypto/boring-solidity/contracts/BoringOwnable.sol@v1.2.0
-// License-Identifier: MIT
-
-// Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol + Claimable.sol
-// Edited by BoringCrypto
 
 contract BoringOwnableData {
     address public owner;
@@ -352,7 +46,7 @@ contract BoringOwnable is BoringOwnableData {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     /// @notice `owner` defaults to msg.sender on construction.
-    constructor() public {
+    constructor() {
         owner = msg.sender;
         emit OwnershipTransferred(address(0), msg.sender);
     }
@@ -491,7 +185,7 @@ contract MasterContractManager is BoringOwnable, BoringFactory {
     // solhint-disable-next-line var-name-mixedcase
     uint256 private immutable DOMAIN_SEPARATOR_CHAIN_ID;
 
-    constructor() public {
+    constructor()  {
         uint256 chainId;
         assembly {
             chainId := chainid()
@@ -703,7 +397,8 @@ contract BentoBoxV1 is MasterContractManager, BoringBatchable {
     // V2: Private to save gas, to verify it's correct, check the constructor arguments
     IERC20 private immutable wethToken;
 
-    IERC20 private constant USE_ETHEREUM = IERC20(0);
+    // IERC20 private constant USE_ETHEREUM = IERC20(0);
+    IERC20 private  USE_ETHEREUM;// = address(0);
     uint256 private constant FLASH_LOAN_FEE = 50; // 0.05%
     uint256 private constant FLASH_LOAN_FEE_PRECISION = 1e5;
     uint256 private constant STRATEGY_DELAY = 2 weeks;
@@ -728,7 +423,7 @@ contract BentoBoxV1 is MasterContractManager, BoringBatchable {
     // *** CONSTRUCTOR *** //
     // ******************* //
 
-    constructor(IERC20 wethToken_) public {
+    constructor(IERC20 wethToken_) {
         wethToken = wethToken_;
     }
 
@@ -1074,7 +769,8 @@ contract BentoBoxV1 is MasterContractManager, BoringBatchable {
             strategy[token] = pending;
             data.strategyStartDate = 0;
             data.balance = 0;
-            pendingStrategy[token] = IStrategy(0);
+            // pendingStrategy[token] = IStrategy(0);
+            // pendingStrategy[token] = address(0);
             emit LogStrategySet(token, newStrategy);
         }
         strategyData[token] = data;
