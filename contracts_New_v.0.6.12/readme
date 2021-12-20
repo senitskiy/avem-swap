@@ -1,11 +1,13 @@
 remixd -s . --remix-ide https://remix.ethereum.org
+remixd -s . -u https://remix.ethereum.org
+remixd -s . --read-only https://remix.ethereum.org
 
     Shibuya testnet
 
 0)  FeeToSetter         0x23D71E50310DFEF63AEA4673F2FfAfAD74Af9b8D
 1)  UniswapV2Factory    0x74D4F385232E74952a04CEf20D6b8089a0412abe
 2)  WETH                0xbB12E6892b95699f4A354BdC3fdC0CCbaF327330         
-3)  UniswapV2Router02    not deploy
+3)  UniswapV2Router02   0xCCF49A6834b19307e6b75f407f60c7a528A40033
 4)  SushiToken          0xB8e481f978A9D2407F23e300994C89C200FC0103       
 5)  MasterChef          0x167fB7f73E11b3219760074358cc141D594d9aE6   {SushiPerBlock: 1000; SushiStartBlock:547,533; BonusEndBlock: 1000000; 
 6)  MasterChefV2        0xF8CeC64f4f8d43bc858a8B766E5734B9214CAa98   uint256 _MASTER_PID ????
@@ -15,10 +17,12 @@ remixd -s . --remix-ide https://remix.ethereum.org
 10) Ownable             0x99cA4891bA09Bf7046128eDD6F3f9c7bC561d28D
 11) SushiBar            0x3Ab8904D36d5a4200758B44e27F2F30bDAE21507
 12) SushiMaker          0xD5DCeabECF3a9A3192761aF85fA92585F7A36b39
-13) bentoBox/BentoBoxV1 too big contract
-13) SushiMakerKashi     need BentoBoxV1     !!!need _pairCodeHash
+13) bentoBox/BentoBoxV1 0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8
 14) SushiRoll           IUniswapV2Router01 _oldRouter, IUniswapV2Router01 _router
-
+15) TokenA              0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B
+17) TokenB              0x7EF2e0048f5bAeDe046f6BF797943daF4ED8CB47
+18) Pair                0x2EB6f39dA30BcCF149f58a4eA1ea6dc53410a009  pairCodeHash   0x62792af53dce185e3e217c847a13e2b244f7e811cfae70a19a20df2e7fb12ee5
+16) SushiMakerKashi     0x66cdF101bd893d35B82720fA7b8bB99925AF079B
 
 extension contract
     governance/Timelock    

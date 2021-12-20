@@ -78,7 +78,7 @@ contract SushiRoll {
         uint256 amountAMin,
         uint256 amountBMin,
         uint256 deadline
-    ) internal returns (uint256 amountA, uint256 amountB) {
+    ) internal returns (uint256 amountA, uint256 amountB) { deadline;
         IUniswapV2Pair pair = IUniswapV2Pair(pairForOldRouter(tokenA, tokenB));
         pair.transferFrom(msg.sender, address(pair), liquidity);
         (uint256 amount0, uint256 amount1) = pair.burn(address(this));
