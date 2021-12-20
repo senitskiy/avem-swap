@@ -1,0 +1,364 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_bar",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_sushi",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_weth",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "bridge",
+						"type": "address"
+					}
+				],
+				"name": "LogBridgeSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "server",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountSUSHI",
+						"type": "uint256"
+					}
+				],
+				"name": "LogConvert",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "bar",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "bridgeFor",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "bridge",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					}
+				],
+				"name": "convert",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "token0",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "token1",
+						"type": "address[]"
+					}
+				],
+				"name": "convertMultiple",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "contract IUniswapV2Factory",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "bridge",
+						"type": "address"
+					}
+				],
+				"name": "setBridge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "direct",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "renounce",
+						"type": "bool"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SushiMaker.sol": "SushiMaker"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Ownable.sol": {
+			"keccak256": "0x2d3206aa7bcc1a8cad9f201d15a86c79cbc1fe60ddc73b5e458b3f0e76cc84a6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a0325f62e157184627a82f5d6cd16f63ce437986a937a34032e05f04e70102f2",
+				"dweb:/ipfs/QmavLNThYkdoyfZf3DHBnJDZLBgH7L1SWVPjQptTbwqyM8"
+			]
+		},
+		"contracts/SushiMaker.sol": {
+			"keccak256": "0x4a363d39421d61d322dadb8de90fa0061b2b73d86015cd89d2f52a6fcfababc9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b22a7d62c6c4c87c855545bf51133d838e8642b5baa1b2399cd2d2c122dc3ee1",
+				"dweb:/ipfs/QmQZhJtvhx9YSo1tTxr6xBDrrgv8fcL2Cifp3o1wbR3ntX"
+			]
+		},
+		"contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xbc2bbe46ffb84b39aa0e39c925b071e3a2ce6e912f7f216619550a38bbf0f9b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b077c653754a13bf0d291048422c1adc2ec51b838e30127272f6958b46d1e83",
+				"dweb:/ipfs/QmYYs2d1rFJ659xSQRZTbqxLuEsNwmuwSWGqaY5NssdiGz"
+			]
+		},
+		"contracts/libraries/SafeERC20.sol": {
+			"keccak256": "0x0d6a8df0657b5b75deb4606cfa91035065a25f1ed407f8ad6240a78871b6f0ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fcd436651799c866fa47c6089ba9af76c75ee05656aed30f4e99d14bcd05b113",
+				"dweb:/ipfs/QmNwpsiFvvV9x81vKMLvR96V7nSrCWi8e1JDECDXTBug2U"
+			]
+		},
+		"contracts/libraries/SafeMath.sol": {
+			"keccak256": "0xf05f427c6f96fd491b23519a46531ad76d47d66316430eec1f586dd12ed7fb7e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3a4134dbaa81253b99b7772c85ad5109b750d3c4b9912f1ff29ec7a4d78e7aa7",
+				"dweb:/ipfs/QmTeczeQh6Udjc1smkJWibdkAFhisFet242refzFHMunMN"
+			]
+		},
+		"contracts/uniswapv2/interfaces/IUniswapV2ERC20.sol": {
+			"keccak256": "0xd179ddb73cdb485120799c3e5f446bd4f9885205528f1e51eda8b3074a819d88",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ea5afb5efa71c14f1e3484e4d4a10cab3c94d116d357e517eaa658bdd4591a3b",
+				"dweb:/ipfs/QmRH5VJr6NAAKk4DXT85Pf6B6frLViUnHf8bFbfGeKt8Q8"
+			]
+		},
+		"contracts/uniswapv2/interfaces/IUniswapV2Factory.sol": {
+			"keccak256": "0xcaec675e6250bf4cd3364459a0cbf789262af2aaa377d61d4d463f657aea7b50",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2c09e004aa8654e1ad2a1e9d8500883f618d754e5a77c840e2c9064c7a80b5cb",
+				"dweb:/ipfs/QmamoA2xnZpLsu4gjNaWkfdYcL5VjRpFmR5shpoJ8wYjZw"
+			]
+		},
+		"contracts/uniswapv2/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0x08f9a63b34855eec941be8d36a04424f1a1725a2c030373fcef3afeb480ca385",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://174219f9a6c90b4d0133475da5333403aea21ba49d303f3ba28cb4e9a2a0141e",
+				"dweb:/ipfs/QmdDy25xsAfWxaKnRbGJys7d9BaPhpbGorMQCY4Au2auZL"
+			]
+		}
+	},
+	"version": 1
+}

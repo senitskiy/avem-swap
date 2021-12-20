@@ -1,0 +1,129 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "migrate",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/MiniChefV2.sol": "IMigratorChef"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@boringcrypto/boring-solidity/contracts/BoringBatchable.sol": {
+			"keccak256": "0xe0b0316b015447ee28c6b7d96c4347b410a66e5d26e922ef3bcccc22f3b4d590",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://bdc37ac77ad2a54674d4dbd9248bed4e948792115521415e2699d4d88fdd33c3",
+				"dweb:/ipfs/QmPHv7YpwqJKCja8txMMYGgr4DgZcjPeJiB5FjtmERvq1N"
+			]
+		},
+		"@boringcrypto/boring-solidity/contracts/BoringOwnable.sol": {
+			"keccak256": "0xfafb586b248c1c697227f5745397562cfe5be2f04e19fb80fc79fc94e3afaba1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a5dec394919b31e1a455a39062aeb44276de7b548a9b5ead748ace6685ea6de0",
+				"dweb:/ipfs/QmaVPaiTziZE9k5JKYMDHiC3XuFL97mMtsHrMBJWCYU3c7"
+			]
+		},
+		"@boringcrypto/boring-solidity/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x8004f86e4536cca55b8eeb2621fe18e1ee57d779396ddef50bce5bf70fb59867",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://149f2f758deda74a5e855ff934fe93daadadb583d09440832e908365f9235d29",
+				"dweb:/ipfs/QmUsZkg1zhehPbPBbf15Pv5BEnP4eaKMpJ1cBN9LGaZurC"
+			]
+		},
+		"@boringcrypto/boring-solidity/contracts/libraries/BoringERC20.sol": {
+			"keccak256": "0x69f1ccf716991e5d6d64dc0e3bc3828fd1990bc18400d680b1aa1960675daaaa",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://b529d3c0ce62bf9fe78f919076e8bf6a1f06803a8977bcabfde79f1979129a6c",
+				"dweb:/ipfs/QmbqHLBPKtSb9wDCrzxeRSRmZJpNdstKjCYXo5EcYEFL4e"
+			]
+		},
+		"@boringcrypto/boring-solidity/contracts/libraries/BoringMath.sol": {
+			"keccak256": "0x2d0e99483c5618251d4b52e8551918253bf044c63e0d09a2f1f652671f9ff762",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://455e6b5fc9912a2660e6c7a5ed664f89400cc80b3328e50134196d6e21773461",
+				"dweb:/ipfs/QmUofeuCbKDdK9DMVo5A7AHys6MwqYmNQM6HaryLbr9g2g"
+			]
+		},
+		"contracts/MiniChefV2.sol": {
+			"keccak256": "0x34fea1186650927735ef9c7c99fca17a9369af68aa02d7af18812d49a80fcce1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d165000483e26e472af9a7979a4989cad2b0718ffb167cae2ce78dcac5985f36",
+				"dweb:/ipfs/QmS5XsX3SFNnqAjnu8p495ZHXcgEUkT3ydLtNCFVHQLu4F"
+			]
+		},
+		"contracts/interfaces/IMasterChef.sol": {
+			"keccak256": "0xbbb2138d7b8be86b5d0bed347ab7f6d2d3e66043393abc882ad37a75fdd860d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://653c61d9936cae961b882eba365c18e7518fe55254f7426995ba672e16e52174",
+				"dweb:/ipfs/QmbmGkvb4ovjBdbCcEgD8ivQxjxdu3aMn9kVyjCMdivMkK"
+			]
+		},
+		"contracts/interfaces/IRewarder.sol": {
+			"keccak256": "0x1b5632385c9d0a0abc6d168cfacff67e40675eca46f65525fb3336e01cc4e3ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://44a5d79bce3f52e509f1906ad07ddb8691cfc36d10ab482e41f4290c33ccc7a8",
+				"dweb:/ipfs/QmdPGowvhqJrs2AwBAghD4DxPYydGMDbBZbrSHyB6UYb7U"
+			]
+		},
+		"contracts/libraries/SignedSafeMath.sol": {
+			"keccak256": "0x4991beb21b224dfcdc3d251e0a60fdc304d4f6b699b2c35d08f3974e5b84c86a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://369067b378136df2214fcbabc8fcab8708f6cb3894e4f2e965d83961bf6e4fa1",
+				"dweb:/ipfs/QmbvtAiqmY8aLaw8WuZnKzyB6mAuwrZs8QPpcvDN6S5Vig"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "calls",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "revertOnFail",
+						"type": "bool"
+					}
+				],
+				"name": "batch",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "permitToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"batch(bytes[],bool)": {
+					"params": {
+						"calls": "An array of inputs for each call.",
+						"revertOnFail": "If True then reverts after a failed call and stops doing further calls."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"batch(bytes[],bool)": {
+					"notice": "Allows batched call to self (this contract)."
+				},
+				"permitToken(address,address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Call wrapper that performs `ERC20.permit` on `token`. Lookup `IERC20.permit`."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/BoringBatchable.sol": "BoringBatchable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/BoringBatchable.sol": {
+			"keccak256": "0xd649bd88b976e48bb70f48b57a55e83a9c54909ca29d2d024ecf42d2fb430948",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b62233bbc329ef953e22695b205ed62e83bccbe896d260a1056c48c7bdba7092",
+				"dweb:/ipfs/QmaL2USdWz7hre1QwQuA8SZbC2BRH4u9w8PZqBmx7Utab1"
+			]
+		},
+		"interfaces/IERC20.sol": {
+			"keccak256": "0x8a054387ca80ff85371c047b5945c2c6eab97dbc29d493b1dedd8e16e75e3555",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4df7e23ecb3946e0d7130e99330c841e800ca39e068cc0b1663917b91063ba92",
+				"dweb:/ipfs/QmQ6VUt3xeiGjxjDb7w2Qg5z9jJkCgdkJAPeFnzdLr4gyQ"
+			]
+		}
+	},
+	"version": 1
+}

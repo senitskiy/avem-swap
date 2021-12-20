@@ -1,0 +1,93 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"onFlashLoan(address,address,uint256,uint256,bytes)": {
+					"params": {
+						"amount": "of the `token` that is loaned.",
+						"data": "Additional data that was passed to the flashloan function.",
+						"fee": "The fee that needs to be paid on top for this loan. Needs to be the same as `token`.",
+						"sender": "The address of the invoker of this flashloan.",
+						"token": "The address of the token that is loaned."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onFlashLoan(address,address,uint256,uint256,bytes)": {
+					"notice": "The flashloan callback. `amount` + `fee` needs to repayed to msg.sender before this call returns."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bentobox/flat/BentoBoxFlat.sol": "IFlashBorrower"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bentobox/flat/BentoBoxFlat.sol": {
+			"keccak256": "0x976abc72c50d532818cd3d3e54b5e4b3dd0d317fdf8436f903d563a7b7f4a348",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ccf9ae7c147eac7b5a1855309b42c78d25c47483c81b0574ecdc49ef8474e0dc",
+				"dweb:/ipfs/QmQ7YyVicqrT17Rdoxou3VM8YLVpA9q59a5vFQ8ADg8YXb"
+			]
+		}
+	},
+	"version": 1
+}

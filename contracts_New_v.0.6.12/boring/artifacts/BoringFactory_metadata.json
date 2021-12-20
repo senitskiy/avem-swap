@@ -1,0 +1,145 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "masterContract",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "cloneAddress",
+						"type": "address"
+					}
+				],
+				"name": "LogDeploy",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "masterContract",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bool",
+						"name": "useCreate2",
+						"type": "bool"
+					}
+				],
+				"name": "deploy",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "cloneAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "masterContractOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"deploy(address,bytes,bool)": {
+					"params": {
+						"data": "Additional abi encoded calldata that is passed to the new clone via `IMasterContract.init`.",
+						"masterContract": "The address of the contract to clone.",
+						"useCreate2": "Creates the clone by using the CREATE2 opcode, in this case `data` will be used as salt."
+					},
+					"returns": {
+						"cloneAddress": "Address of the created clone contract."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deploy(address,bytes,bool)": {
+					"notice": "Deploys a given master Contract as a clone. Any ETH transferred with this call is forwarded to the new clone. Emits `LogDeploy`."
+				},
+				"masterContractOf(address)": {
+					"notice": "Mapping from clone contracts to their masterContract."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/BoringFactory.sol": "BoringFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/BoringFactory.sol": {
+			"keccak256": "0x624462eade1e24bdd39db08662153286cc1917031852fa49dd352d8dc36b8b45",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6000d2c0ceedb72dedcc627461e6bd173f91942705c7d34519435b9f0f8959be",
+				"dweb:/ipfs/Qmc1Pogiagyy8RN5JT7TTmpvbuSNfuzwvueYE7P6xehZzk"
+			]
+		},
+		"boring/interfaces/IMasterContract.sol": {
+			"keccak256": "0x06035f3f05f41e9b70c01d947b43082693d5dbe0caef1d0d4a117d06fb64faf8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c90f4b70702c36a5640ad2fcb2906e861cee2c9a4b625729ff048c178416269c",
+				"dweb:/ipfs/QmXHfAuZxeqUEkufnjfX8DSjLJs1ArT7EJZ5uhhA2FnmFs"
+			]
+		}
+	},
+	"version": 1
+}

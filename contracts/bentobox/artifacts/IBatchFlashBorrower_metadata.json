@@ -1,0 +1,93 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "fees",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onBatchFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"onBatchFlashLoan(address,address[],uint256[],uint256[],bytes)": {
+					"params": {
+						"amounts": "A one-to-one map to `tokens` that is loaned.",
+						"data": "Additional data that was passed to the flashloan function.",
+						"fees": "A one-to-one map to `tokens` that needs to be paid on top for each loan. Needs to be the same token.",
+						"sender": "The address of the invoker of this flashloan.",
+						"tokens": "Array of addresses for ERC-20 tokens that is loaned."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onBatchFlashLoan(address,address[],uint256[],uint256[],bytes)": {
+					"notice": "The callback for batched flashloans. Every amount + fee needs to repayed to msg.sender before this call returns."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/bentobox/BentoBoxV1.sol": "IBatchFlashBorrower"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/bentobox/BentoBoxV1.sol": {
+			"keccak256": "0xf5251397b9aaa5c66ddc18b0cb96350ffac09f5776a1255fedc0072641f916fe",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://a50ae7838a0c690efa617f439504a524b52db118895aa95e139fb07fb9aa009d",
+				"dweb:/ipfs/QmWdWpQ2jmhfE3LUpukU93AD38UNm48tV8WKpGotv34rRa"
+			]
+		}
+	},
+	"version": 1
+}

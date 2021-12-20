@@ -1,0 +1,69 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "init",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"init(bytes)": {
+					"params": {
+						"data": "Can be abi encoded arguments or anything else."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"init(bytes)": {
+					"notice": "Init function that gets called from `BoringFactory.deploy`. Also kown as the constructor for cloned contracts. Any ETH send to `BoringFactory.deploy` ends up here."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/interfaces/IMasterContract.sol": "IMasterContract"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/interfaces/IMasterContract.sol": {
+			"keccak256": "0x06035f3f05f41e9b70c01d947b43082693d5dbe0caef1d0d4a117d06fb64faf8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c90f4b70702c36a5640ad2fcb2906e861cee2c9a4b625729ff048c178416269c",
+				"dweb:/ipfs/QmXHfAuZxeqUEkufnjfX8DSjLJs1ArT7EJZ5uhhA2FnmFs"
+			]
+		}
+	},
+	"version": 1
+}

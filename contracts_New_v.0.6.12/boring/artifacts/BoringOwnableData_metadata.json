@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/BoringOwnable.sol": "BoringOwnableData"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/BoringOwnable.sol": {
+			"keccak256": "0x97159eed867bf7608f18f6eb6be16beaf6224105326a4900cad6392fe3a45c8a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://77cc49d6238e36f94ebd207007b4cb758e36aa2a34a797a871e47991a5d2605b",
+				"dweb:/ipfs/QmVPsYQxXxMyKxWLCYXdXxVohBLtfdXS28FYMZAvc5U5TH"
+			]
+		}
+	},
+	"version": 1
+}

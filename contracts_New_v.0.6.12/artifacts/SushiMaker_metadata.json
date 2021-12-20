@@ -1,0 +1,364 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_bar",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_sushi",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_weth",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "bridge",
+						"type": "address"
+					}
+				],
+				"name": "LogBridgeSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "server",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountSUSHI",
+						"type": "uint256"
+					}
+				],
+				"name": "LogConvert",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "bar",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "bridgeFor",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "bridge",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					}
+				],
+				"name": "convert",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "token0",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "token1",
+						"type": "address[]"
+					}
+				],
+				"name": "convertMultiple",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "contract IUniswapV2Factory",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "bridge",
+						"type": "address"
+					}
+				],
+				"name": "setBridge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "direct",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "renounce",
+						"type": "bool"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_New_v.0.6.12/SushiMaker.sol": "SushiMaker"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_New_v.0.6.12/Ownable.sol": {
+			"keccak256": "0xb986156cd7563a7ce7db53d94a7a4aeed4243225f2376fd7f5b4b3ff2d099945",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93bed6a104036b33d8c578f8548d567fb2414bac6a0d70437b95c60e5841c4fb",
+				"dweb:/ipfs/QmfADj3Ud8F11Dt3KPsUDmbhCFrZiPmPZTomJFLezdJ7qf"
+			]
+		},
+		"contracts_New_v.0.6.12/SushiMaker.sol": {
+			"keccak256": "0x5c18fd1cf371f7238435dc797c34101fb46805140681bb7dabb5d6351c1f4082",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://77e08b389c32a2b0ae7b752d6c3f3654f0c6dff181829edb1941ac96b56ba484",
+				"dweb:/ipfs/QmRgq5CZpAxjJfhhUGdpaRZRHzN7eWAg6g4xdapVjjYZmc"
+			]
+		},
+		"contracts_New_v.0.6.12/interfaces/IERC20.sol": {
+			"keccak256": "0x8a054387ca80ff85371c047b5945c2c6eab97dbc29d493b1dedd8e16e75e3555",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4df7e23ecb3946e0d7130e99330c841e800ca39e068cc0b1663917b91063ba92",
+				"dweb:/ipfs/QmQ6VUt3xeiGjxjDb7w2Qg5z9jJkCgdkJAPeFnzdLr4gyQ"
+			]
+		},
+		"contracts_New_v.0.6.12/libraries/SafeERC20.sol": {
+			"keccak256": "0x0d6a8df0657b5b75deb4606cfa91035065a25f1ed407f8ad6240a78871b6f0ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fcd436651799c866fa47c6089ba9af76c75ee05656aed30f4e99d14bcd05b113",
+				"dweb:/ipfs/QmNwpsiFvvV9x81vKMLvR96V7nSrCWi8e1JDECDXTBug2U"
+			]
+		},
+		"contracts_New_v.0.6.12/libraries/SafeMath.sol": {
+			"keccak256": "0x0cb41a5ba9d81c54b956f2c7bc45066a21c679e3bcc654d18c6ea2ad03ee7028",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6811675c00edc37cb6297251da7097ef1b20821a00b282a6c8bf7fd2360a9ee1",
+				"dweb:/ipfs/QmZbCNRHzrQkY2rhWZwXvk3bY6pehGhUFifgCUgE2vdj1E"
+			]
+		},
+		"contracts_New_v.0.6.12/uniswapv2/interfaces/IUniswapV2ERC20.sol": {
+			"keccak256": "0xd179ddb73cdb485120799c3e5f446bd4f9885205528f1e51eda8b3074a819d88",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ea5afb5efa71c14f1e3484e4d4a10cab3c94d116d357e517eaa658bdd4591a3b",
+				"dweb:/ipfs/QmRH5VJr6NAAKk4DXT85Pf6B6frLViUnHf8bFbfGeKt8Q8"
+			]
+		},
+		"contracts_New_v.0.6.12/uniswapv2/interfaces/IUniswapV2Factory.sol": {
+			"keccak256": "0x5136626bf3f0231b48ca936297d5f36ebe3871208846589c531f9903d1fbac78",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b1132e942e8e136f4112a6a7283eed895a1cd4888e35a4ed129f6625a75f82ea",
+				"dweb:/ipfs/QmUSiprWkcX3P66THwuqQ6gyt38gjYqEANLTGNKaKLT4Bb"
+			]
+		},
+		"contracts_New_v.0.6.12/uniswapv2/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0xcc223e366a19224df9ced96c32d182900bec56c365d6f07257a541b7adaa46fe",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0d6b0e992b3b054a583ea25fba35fb540c04527e197be09b8adaae4bf9afdf73",
+				"dweb:/ipfs/QmWcFD3jSrESUJ7aR6cHqfSMKmaELPog8hN13KJgVr4BEA"
+			]
+		}
+	},
+	"version": 1
+}

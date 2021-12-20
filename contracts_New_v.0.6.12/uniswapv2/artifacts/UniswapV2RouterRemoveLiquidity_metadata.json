@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "removeLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"uniswapv2/UniswapV2RouterRemoveLiquidity.sol": "UniswapV2RouterRemoveLiquidity"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"uniswapv2/UniswapV2RouterRemoveLiquidity.sol": {
+			"keccak256": "0x63fb4c63ce2b493a574dc836615af71d88f09293019fc8a85590c30ac848d9a4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0a7455d9e639fc509b368ce1fd40ffbdce976f6e1cae8d104d991acf3629103e",
+				"dweb:/ipfs/QmawQi6H554Np2h9eqtWNxv9mvAVHbY8seHRTbdhQNKPWB"
+			]
+		},
+		"uniswapv2/interfaces/IUniswapV2RouterRemoveLiquidity.sol": {
+			"keccak256": "0x6c46e1eaac8e937c46b027a000a1acd9f88a5c5796045992566d20bea092e865",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d4539cf66c140015c06c2e79c6bf23e08041bf713331b854784af478f28bc661",
+				"dweb:/ipfs/QmerbQQ6hNjhg3W7BVXof57ar2tEcSDrbkhNbEUZoNLjr4"
+			]
+		},
+		"uniswapv2/libraries/SafeMath.sol": {
+			"keccak256": "0xd8ff58e7e3509d504836ac163d5808b1c1c5cde43cebf8ac178d1b9aecb0beb1",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e4c95b93e46274cd5bad7b237da44a31e1c955c49b54631e51c9fb208a3f58c0",
+				"dweb:/ipfs/QmNwMsA793VqrcMWCqvJ99Vvrf8WP9DXKgJ4oy4KyF2mSA"
+			]
+		}
+	},
+	"version": 1
+}

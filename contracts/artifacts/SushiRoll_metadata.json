@@ -1,0 +1,251 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IUniswapV2Router01",
+						"name": "_oldRouter",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IUniswapV2Router01",
+						"name": "_router",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "liquidity",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountAMin",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountBMin",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "migrate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "liquidity",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountAMin",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountBMin",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "migrateWithPermit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "oldRouter",
+				"outputs": [
+					{
+						"internalType": "contract IUniswapV2Router01",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "router",
+				"outputs": [
+					{
+						"internalType": "contract IUniswapV2Router01",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SushiRoll.sol": "SushiRoll"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/math/SafeMath.sol": {
+			"keccak256": "0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c",
+				"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08",
+				"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
+			"keccak256": "0xf12dfbe97e6276980b83d2830bb0eb75e0cf4f3e626c2471137f82158ae6a0fc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3a849c2d95e85463909e5b5c920b13e7a11216ca14127085e16d22b9379d52a",
+				"dweb:/ipfs/QmUg3CZDbCCcQdroEpexBy5ZFd5vD1UWijWQq9qHZjtJNQ"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x28911e614500ae7c607a432a709d35da25f3bc5ddc8bd12b278b66358070c0ea",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://256c8c8af5eb072bc473226ab2b2187149b8fc04f5f4a4820db22527f5ce8e3c",
+				"dweb:/ipfs/QmRvi5BhnL7Rxf85KrJhwM6RRhukm4tzoctRdgQEheNyiN"
+			]
+		},
+		"contracts/SushiRoll.sol": {
+			"keccak256": "0xe0e28efb786b082e0fd0abee1ceedeb8f19684fc77c78d8d3ae10c9ce92c53cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4e3185e8339a31406f650787def93df59b1b24a20743c191a13fae31ae9660ad",
+				"dweb:/ipfs/QmdZwLKEppKhjZdqmH1FzdSbxwA176z7dsdyzKHgf8KoGh"
+			]
+		},
+		"contracts/uniswapv2/interfaces/IUniswapV2Factory.sol": {
+			"keccak256": "0xcaec675e6250bf4cd3364459a0cbf789262af2aaa377d61d4d463f657aea7b50",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2c09e004aa8654e1ad2a1e9d8500883f618d754e5a77c840e2c9064c7a80b5cb",
+				"dweb:/ipfs/QmamoA2xnZpLsu4gjNaWkfdYcL5VjRpFmR5shpoJ8wYjZw"
+			]
+		},
+		"contracts/uniswapv2/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0x08f9a63b34855eec941be8d36a04424f1a1725a2c030373fcef3afeb480ca385",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://174219f9a6c90b4d0133475da5333403aea21ba49d303f3ba28cb4e9a2a0141e",
+				"dweb:/ipfs/QmdDy25xsAfWxaKnRbGJys7d9BaPhpbGorMQCY4Au2auZL"
+			]
+		},
+		"contracts/uniswapv2/interfaces/IUniswapV2Router01.sol": {
+			"keccak256": "0x12091adc186fe351c639dc62aa0b691f78c7bea054c27bbb4b58acd02e1b2ce7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e7a3f1b86be061741f5483f0f153389aa9e89a24a1556c8784df44ce288b5183",
+				"dweb:/ipfs/QmejsqRXse45aoyDjccfKEnZ1uZzdqUtjsYbAS3ThAMesu"
+			]
+		},
+		"contracts/uniswapv2/libraries/SafeMath.sol": {
+			"keccak256": "0xbde2cf4655f2f21a4e6cc76c28cf88ade1d8150289c208d48662135be9d5dd97",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bd8f46ed9dc5ad8123e596a3b762815503a04ce8a83098d80ba45085fe3c5953",
+				"dweb:/ipfs/QmUa6d2v7Miy26dzUctkrumi5My4G34TL9QNUj9u4hh7iS"
+			]
+		},
+		"contracts/uniswapv2/libraries/UniswapV2Library.sol": {
+			"keccak256": "0x0f9b5380ff674e29e702eb9e472e728222fb3ec65f38aef03336c8a82e2ad80d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://154392fa8d31dbded1ebe0b7591643ce4b35011dfb3ad90742d8355428c729f1",
+				"dweb:/ipfs/QmNhNPjbYt3CBoEstVNEcR2C34eRYxFXpaAqCWJXpj2rvP"
+			]
+		}
+	},
+	"version": 1
+}

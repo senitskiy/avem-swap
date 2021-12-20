@@ -1,0 +1,118 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "nonces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"allowance(address,address)": {
+					"notice": "owner > spender > allowance mapping."
+				},
+				"balanceOf(address)": {
+					"notice": "owner > balance mapping."
+				},
+				"nonces(address)": {
+					"notice": "owner > nonce mapping. Used in `permit`."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/bentobox/KashiPairMediumRiskV1.sol": "ERC20Data"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/bentobox/KashiPairMediumRiskV1.sol": {
+			"keccak256": "0xf37ff7488158ae183be078253916cf0632314c2acfbfb9e9a35434b2bc05631e",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://c250cb8f5a1d3b29619fdf6d2cd12a9e35eea88cee58905ed6b2794f0881b40b",
+				"dweb:/ipfs/QmYqX9fhBUDg8cQKCL5Lmt26Ek4z1NUmgHn2emdT3Jetzz"
+			]
+		}
+	},
+	"version": 1
+}

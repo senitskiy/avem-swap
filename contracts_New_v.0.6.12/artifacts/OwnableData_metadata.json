@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_New_v.0.6.12/Ownable.sol": "OwnableData"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_New_v.0.6.12/Ownable.sol": {
+			"keccak256": "0xb986156cd7563a7ce7db53d94a7a4aeed4243225f2376fd7f5b4b3ff2d099945",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93bed6a104036b33d8c578f8548d567fb2414bac6a0d70437b95c60e5841c4fb",
+				"dweb:/ipfs/QmfADj3Ud8F11Dt3KPsUDmbhCFrZiPmPZTomJFLezdJ7qf"
+			]
+		}
+	},
+	"version": 1
+}

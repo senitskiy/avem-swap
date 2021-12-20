@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "A library for performing overflow-/underflow-safe addition and subtraction on uint32.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/BoringMath.sol": "BoringMath32"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/BoringMath.sol": {
+			"keccak256": "0x31110d27a9693cb0e0c1eb0bdb0074f44082dc1b541487d5d53ae5850a5c5e7b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08e5a58c7f4695f2f6eca20d614bb1a89adc57b5db4d5a9669d2261795dddbcc",
+				"dweb:/ipfs/QmRcfAiHUKXketuy98j1nH8eW1LjhHX5xYZnNiK7qD9omm"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,138 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "share",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "shareOut",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_New_v.0.6.12/SushiMakerKashi.sol": "IBentoBoxWithdraw"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_New_v.0.6.12/Ownable.sol": {
+			"keccak256": "0xb986156cd7563a7ce7db53d94a7a4aeed4243225f2376fd7f5b4b3ff2d099945",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93bed6a104036b33d8c578f8548d567fb2414bac6a0d70437b95c60e5841c4fb",
+				"dweb:/ipfs/QmfADj3Ud8F11Dt3KPsUDmbhCFrZiPmPZTomJFLezdJ7qf"
+			]
+		},
+		"contracts_New_v.0.6.12/SushiMakerKashi.sol": {
+			"keccak256": "0x34b93b03a8d702c6e04e5b0bdb1e9a2eace02b6ba224a0c61f1775df3f22b52e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d156b1749b2c9171c13d21b26df2e0125faabfe1ecef15d233fd95ca6fb0bb4",
+				"dweb:/ipfs/QmW5nV97VxgUoCzZnQrJqZcBy2UHSx5duzW3QSS62i2hgS"
+			]
+		},
+		"contracts_New_v.0.6.12/interfaces/IERC20.sol": {
+			"keccak256": "0x8a054387ca80ff85371c047b5945c2c6eab97dbc29d493b1dedd8e16e75e3555",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4df7e23ecb3946e0d7130e99330c841e800ca39e068cc0b1663917b91063ba92",
+				"dweb:/ipfs/QmQ6VUt3xeiGjxjDb7w2Qg5z9jJkCgdkJAPeFnzdLr4gyQ"
+			]
+		},
+		"contracts_New_v.0.6.12/libraries/SafeERC20.sol": {
+			"keccak256": "0x0d6a8df0657b5b75deb4606cfa91035065a25f1ed407f8ad6240a78871b6f0ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fcd436651799c866fa47c6089ba9af76c75ee05656aed30f4e99d14bcd05b113",
+				"dweb:/ipfs/QmNwpsiFvvV9x81vKMLvR96V7nSrCWi8e1JDECDXTBug2U"
+			]
+		},
+		"contracts_New_v.0.6.12/libraries/SafeMath.sol": {
+			"keccak256": "0x0cb41a5ba9d81c54b956f2c7bc45066a21c679e3bcc654d18c6ea2ad03ee7028",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6811675c00edc37cb6297251da7097ef1b20821a00b282a6c8bf7fd2360a9ee1",
+				"dweb:/ipfs/QmZbCNRHzrQkY2rhWZwXvk3bY6pehGhUFifgCUgE2vdj1E"
+			]
+		},
+		"contracts_New_v.0.6.12/uniswapv2/interfaces/IUniswapV2Factory.sol": {
+			"keccak256": "0x5136626bf3f0231b48ca936297d5f36ebe3871208846589c531f9903d1fbac78",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b1132e942e8e136f4112a6a7283eed895a1cd4888e35a4ed129f6625a75f82ea",
+				"dweb:/ipfs/QmUSiprWkcX3P66THwuqQ6gyt38gjYqEANLTGNKaKLT4Bb"
+			]
+		},
+		"contracts_New_v.0.6.12/uniswapv2/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0xcc223e366a19224df9ced96c32d182900bec56c365d6f07257a541b7adaa46fe",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0d6b0e992b3b054a583ea25fba35fb540c04527e197be09b8adaae4bf9afdf73",
+				"dweb:/ipfs/QmWcFD3jSrESUJ7aR6cHqfSMKmaELPog8hN13KJgVr4BEA"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bentobox/interfaces/IWETH.sol": "IWETH"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bentobox/interfaces/IWETH.sol": {
+			"keccak256": "0xd36ab8720f5e6055e6cfdf5d767564294aad2a2af02da9fa998d588f94af178f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6314bf2389220fb00b0c8bd380de833ca0b780360c37609e3943d1862e2cc4fa",
+				"dweb:/ipfs/QmNZyXfs1cxbYPxYKTKLZ39t4nQAeJgjD1V6Jbc9fJWmUi"
+			]
+		}
+	},
+	"version": 1
+}

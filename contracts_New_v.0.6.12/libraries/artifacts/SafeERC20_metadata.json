@@ -1,0 +1,73 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "IERC20"
+					}
+				],
+				"name": "safeDecimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"awemSwap/libraries/SafeERC20.sol": "SafeERC20"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"awemSwap/interfaces/IERC20.sol": {
+			"keccak256": "0x3dfcbe9d63fc37fc101c2c90b9198bdc120cfc540ac4bf9ab7590dcf0c691a6c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5e2fdfc43e202f57467df853f3e72b77f55b79ef79b7c94c77d9fa9b6b12563d",
+				"dweb:/ipfs/QmcAH9PZrHPHvgU5hwnh3Lno8DQu9aEvZyAW9kZ1qjoKGV"
+			]
+		},
+		"awemSwap/libraries/SafeERC20.sol": {
+			"keccak256": "0x132a8fce6dd6039ea2010696ca4b5672f9c7f0410b6a5144f97bccbf230fa8d6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd1ad33d1b3804b33e1f7f5dad388b701b7409191c5d305394c2993dbf1c6267",
+				"dweb:/ipfs/QmWxeWpAJevrymbGLWqeRVwXSP2toeZt9vg3RKnvGXCywc"
+			]
+		}
+	},
+	"version": 1
+}

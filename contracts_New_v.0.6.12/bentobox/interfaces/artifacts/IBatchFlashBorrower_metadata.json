@@ -1,0 +1,101 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "fees",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onBatchFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"onBatchFlashLoan(address,address[],uint256[],uint256[],bytes)": {
+					"params": {
+						"amounts": "A one-to-one map to `tokens` that is loaned.",
+						"data": "Additional data that was passed to the flashloan function.",
+						"fees": "A one-to-one map to `tokens` that needs to be paid on top for each loan. Needs to be the same token.",
+						"sender": "The address of the invoker of this flashloan.",
+						"tokens": "Array of addresses for ERC-20 tokens that is loaned."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onBatchFlashLoan(address,address[],uint256[],uint256[],bytes)": {
+					"notice": "The callback for batched flashloans. Every amount + fee needs to repayed to msg.sender before this call returns."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bentobox/interfaces/IFlashLoan.sol": "IBatchFlashBorrower"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bentobox/interfaces/IFlashLoan.sol": {
+			"keccak256": "0x881b23cecd78eda9706181c970c95061efca558f3154906f144d785698274536",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cb0a394917053636f1168f252aa85b8b0bbcfd6232b1bb3e034f9ce94da64af8",
+				"dweb:/ipfs/QmQaPmbU3Jyfhvmc19XPxeFyD1pu4ETmQNCVSWf4ra2UPP"
+			]
+		},
+		"interfaces/IERC20.sol": {
+			"keccak256": "0x8a054387ca80ff85371c047b5945c2c6eab97dbc29d493b1dedd8e16e75e3555",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4df7e23ecb3946e0d7130e99330c841e800ca39e068cc0b1663917b91063ba92",
+				"dweb:/ipfs/QmQ6VUt3xeiGjxjDb7w2Qg5z9jJkCgdkJAPeFnzdLr4gyQ"
+			]
+		}
+	},
+	"version": 1
+}

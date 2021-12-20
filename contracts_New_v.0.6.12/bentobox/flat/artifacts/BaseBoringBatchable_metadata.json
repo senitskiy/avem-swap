@@ -1,0 +1,90 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "calls",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "revertOnFail",
+						"type": "bool"
+					}
+				],
+				"name": "batch",
+				"outputs": [
+					{
+						"internalType": "bool[]",
+						"name": "successes",
+						"type": "bool[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "results",
+						"type": "bytes[]"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"batch(bytes[],bool)": {
+					"params": {
+						"calls": "An array of inputs for each call.",
+						"revertOnFail": "If True then reverts after a failed call and stops doing further calls."
+					},
+					"returns": {
+						"results": "An array with the returned data of each function call, mapped one-to-one to `calls`.",
+						"successes": "An array indicating the success of a call, mapped one-to-one to `calls`."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"batch(bytes[],bool)": {
+					"notice": "Allows batched call to self (this contract)."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bentobox/flat/BentoBoxFlat.sol": "BaseBoringBatchable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bentobox/flat/BentoBoxFlat.sol": {
+			"keccak256": "0x976abc72c50d532818cd3d3e54b5e4b3dd0d317fdf8436f903d563a7b7f4a348",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ccf9ae7c147eac7b5a1855309b42c78d25c47483c81b0574ecdc49ef8474e0dc",
+				"dweb:/ipfs/QmQ7YyVicqrT17Rdoxou3VM8YLVpA9q59a5vFQ8ADg8YXb"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,166 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"name": "exit",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "amountAdded",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "harvest",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "amountAdded",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "skim",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "actualAmount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"exit(uint256)": {
+					"params": {
+						"balance": "The amount of tokens the caller thinks it has invested."
+					},
+					"returns": {
+						"amountAdded": "The delta (+profit or -loss) that occured in contrast to `balance`."
+					}
+				},
+				"harvest(uint256,address)": {
+					"params": {
+						"balance": "The amount of tokens the caller thinks it has invested.",
+						"sender": "The address of the initiator of this transaction. Can be used for reimbursements, etc."
+					},
+					"returns": {
+						"amountAdded": "The delta (+profit or -loss) that occured in contrast to `balance`."
+					}
+				},
+				"skim(uint256)": {
+					"params": {
+						"amount": "The amount of tokens to invest."
+					}
+				},
+				"withdraw(uint256)": {
+					"details": "The `actualAmount` should be very close to the amount. The difference should NOT be used to report a loss. That's what harvest is for.",
+					"params": {
+						"amount": "The requested amount the caller wants to withdraw."
+					},
+					"returns": {
+						"actualAmount": "The real amount that is withdrawn."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"exit(uint256)": {
+					"notice": "Withdraw all assets in the safest way possible. This shouldn't fail."
+				},
+				"harvest(uint256,address)": {
+					"notice": "Harvest any profits made converted to the asset and pass them to the caller."
+				},
+				"skim(uint256)": {
+					"notice": "Send the assets to the Strategy and call skim to invest them."
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraw assets. The returned amount can differ from the requested amount due to rounding."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bentobox/flat/BentoBoxFlat.sol": "IStrategy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bentobox/flat/BentoBoxFlat.sol": {
+			"keccak256": "0x976abc72c50d532818cd3d3e54b5e4b3dd0d317fdf8436f903d563a7b7f4a348",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ccf9ae7c147eac7b5a1855309b42c78d25c47483c81b0574ecdc49ef8474e0dc",
+				"dweb:/ipfs/QmQ7YyVicqrT17Rdoxou3VM8YLVpA9q59a5vFQ8ADg8YXb"
+			]
+		}
+	},
+	"version": 1
+}

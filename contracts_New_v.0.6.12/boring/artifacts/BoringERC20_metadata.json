@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/BoringERC20.sol": "BoringERC20"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/BoringERC20.sol": {
+			"keccak256": "0x73c555d64b48a4b07e58abafc0d1147645455497c2cb5629fa9c4e5d3e8b69b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8143ddf561c08c273594e872504fe9e0596cf3c6e4682ca8c4e6127eed12922c",
+				"dweb:/ipfs/Qmbim9RnJfNJZEUV6NwAqNSyCwjah5jGozEWBWRPqfYH4u"
+			]
+		},
+		"interfaces/IERC20.sol": {
+			"keccak256": "0x8a054387ca80ff85371c047b5945c2c6eab97dbc29d493b1dedd8e16e75e3555",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4df7e23ecb3946e0d7130e99330c841e800ca39e068cc0b1663917b91063ba92",
+				"dweb:/ipfs/QmQ6VUt3xeiGjxjDb7w2Qg5z9jJkCgdkJAPeFnzdLr4gyQ"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,142 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "claimOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "direct",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "renounce",
+						"type": "bool"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"transferOwnership(address,bool,bool)": {
+					"params": {
+						"direct": "True if `newOwner` should be set immediately. False if `newOwner` needs to use `claimOwnership`.",
+						"newOwner": "Address of the new owner.",
+						"renounce": "Allows the `newOwner` to be `address(0)` if `direct` and `renounce` is True. Has no effect otherwise."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"claimOwnership()": {
+					"notice": "Needs to be called by `pendingOwner` to claim ownership."
+				},
+				"constructor": "`owner` defaults to msg.sender on construction.",
+				"transferOwnership(address,bool,bool)": {
+					"notice": "Transfers ownership to `newOwner`. Either directly or claimable by the new pending owner. Can only be invoked by the current `owner`."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"boring/BoringOwnable.sol": "BoringOwnable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"boring/BoringOwnable.sol": {
+			"keccak256": "0x97159eed867bf7608f18f6eb6be16beaf6224105326a4900cad6392fe3a45c8a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://77cc49d6238e36f94ebd207007b4cb758e36aa2a34a797a871e47991a5d2605b",
+				"dweb:/ipfs/QmVPsYQxXxMyKxWLCYXdXxVohBLtfdXS28FYMZAvc5U5TH"
+			]
+		}
+	},
+	"version": 1
+}

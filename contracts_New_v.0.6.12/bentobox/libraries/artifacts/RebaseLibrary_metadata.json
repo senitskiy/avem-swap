@@ -1,0 +1,54 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "A rebasing library using overflow-/underflow-safe math.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bentobox/libraries/RebaseLibrary.sol": "RebaseLibrary"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bentobox/libraries/RebaseLibrary.sol": {
+			"keccak256": "0x289ef0263db7ec32cb1a7727c0f025517c3da6c7e45e59d18565b7732adff98c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a32e4a016ef2d78cfd8cd0dc56c6beb1162bc6fa257097c7a9a196873e124c0f",
+				"dweb:/ipfs/QmYvxHq2WnpHCr542JTCtsHfp3HAXx4j2jj7UGcXAPLXLL"
+			]
+		},
+		"boring/BoringMath.sol": {
+			"keccak256": "0x31110d27a9693cb0e0c1eb0bdb0074f44082dc1b541487d5d53ae5850a5c5e7b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08e5a58c7f4695f2f6eca20d614bb1a89adc57b5db4d5a9669d2261795dddbcc",
+				"dweb:/ipfs/QmRcfAiHUKXketuy98j1nH8eW1LjhHX5xYZnNiK7qD9omm"
+			]
+		}
+	},
+	"version": 1
+}
